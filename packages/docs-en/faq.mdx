@@ -1,0 +1,54 @@
+---
+title: "FAQ"
+---
+
+## General
+
+### What languages does the Agent support?
+
+Currently supports Chinese and English conversations. Knowledge base documents can be in either language; the Agent automatically matches the user's query language.
+
+### Is there a size limit for documents?
+
+Single documents should ideally stay under 10,000 characters. Longer documents should be split into smaller ones, each focusing on a single topic, to improve retrieval accuracy.
+
+### How often does auto-sync run?
+
+Auto-sync runs every 30 minutes. You can also trigger an immediate sync manually from the admin panel.
+
+## Knowledge Base
+
+### How to improve Agent accuracy?
+
+1. **Use precise titles** — Titles should clearly describe the document content
+2. **Structure your content** — Use headings, lists, and other Markdown formatting
+3. **One topic per document** — Avoid covering too many topics in a single document
+4. **Use AI Enhancement** — Generate search metadata using the AI enhancement feature
+
+### How long until updates take effect?
+
+Changes take effect immediately after manual sync. Documents are written to both the database and Elasticsearch simultaneously.
+
+### Can deleted documents still be found?
+
+No. Deletion clears records from both the database and Elasticsearch.
+
+## Technical
+
+### What file formats are supported?
+
+The sync system supports `.mdx` format. `.md` files are not auto-synced, but you can create documents manually in the admin panel.
+
+### How to handle multilingual docs?
+
+Organize by language in separate directories:
+
+```
+packages/
+├── docs-zh/     ← Chinese docs
+│   └── intro.mdx
+└── docs-en/     ← English docs
+    └── intro.mdx
+```
+
+Specify different subdirectories and categories when syncing.

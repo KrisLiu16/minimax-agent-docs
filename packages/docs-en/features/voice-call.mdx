@@ -1,0 +1,28 @@
+---
+title: "Voice Call"
+---
+
+## Overview
+
+MiniMax Agent supports real-time voice calls, allowing users to have natural conversations via voice.
+
+## Supported Scenarios
+
+- **Phone Support** — Users call the support hotline, handled by the Agent
+- **Voice Assistant** — In-app voice interaction integration
+- **Outbound Callbacks** — Agent proactively calls users for follow-ups
+
+## Voice Parameters
+
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| Voice Model | TTS synthesis model | speech-02-hd |
+| Speed | Playback speed | 1.0 |
+| Voice | Preset or custom voice | Default female |
+| VAD Sensitivity | Voice activity detection sensitivity | Medium |
+
+## Best Practices
+
+1. **Keep responses concise** — Long replies are poor UX in voice; limit key points to 3 sentences or fewer
+2. **Avoid complex formatting** — Tables and code blocks can't be rendered in voice; use conversational language
+3. **Enable interruption** — Allow users to interrupt the Agent's response for better interaction

@@ -1,0 +1,35 @@
+---
+title: "Getting Started"
+---
+
+## Welcome to MiniMax Agent
+
+MiniMax Agent is an intelligent customer service assistant that supports text conversations and voice calls, helping businesses handle customer inquiries efficiently.
+
+## Onboarding Process
+
+1. **Create a CS Config** — Create a customer service configuration in the admin panel under the "Config" tab
+2. **Set Up Knowledge Base** — Add business-related documents; the Agent will answer questions based on these docs
+3. **Test Conversations** — Review test conversations in the "Sessions" tab
+4. **Go Live** — Deploy to production once you're satisfied with the results
+
+## Core Concepts
+
+### Customer Service Config
+
+Each config includes:
+- Basic info (name, description)
+- Associated knowledge base
+- Conversation parameters (temperature, max turns, etc.)
+
+### Knowledge Base Documents
+
+The knowledge base is what the Agent uses to answer questions. Documents are indexed into Elasticsearch for semantic retrieval.
+
+- Create and edit manually
+- Bulk sync from GitHub repositories
+- AI-enhanced search metadata
+
+### Session
+
+Each user conversation with the Agent forms a session, containing the full message history and referenced knowledge base documents.

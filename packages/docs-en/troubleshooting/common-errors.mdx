@@ -1,0 +1,41 @@
+---
+title: "Common Errors"
+---
+
+## Sync Failures
+
+### git pull failed
+
+**Symptom**: Sync log shows `git pull failed, aborting sync`
+
+**Causes & Solutions**:
+- **Auth failure** — Verify the `GITHUB_TOKEN` environment variable is set correctly
+- **Network issue** — Confirm the server can reach github.com
+- **Merge conflict** — Never modify the local repo on the server directly; push all changes via git
+
+### RPC call failed
+
+**Symptom**: Sync log shows `create failed` or `update failed` with RPC errors
+
+**Causes & Solutions**:
+- **chat-server unavailable** — Check if the chat-server service is running
+- **Invalid parameters** — Verify the config_id is valid
+- **Document too large** — Keep individual documents under 50KB
+
+## Knowledge Base Search Issues
+
+### Document synced but not searchable
+
+**Possible causes**:
+1. ES indexing delay — Wait a few seconds and retry
+2. Search keywords differ too much from document content — Use AI enhancement to optimize search metadata
+3. Category mismatch — Ensure the config_id used during search matches the one used during sync
+
+### Document content is empty
+
+**Cause**: Incorrect MDX frontmatter format causing parse failure
+
+**Check**:
+- Frontmatter must start and end with `---`
+- The `title` field must exist and be non-empty
+- Ensure file encoding is UTF-8

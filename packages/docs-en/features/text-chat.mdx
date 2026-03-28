@@ -1,0 +1,36 @@
+---
+title: "Text Chat"
+---
+
+## Overview
+
+Text chat is the core feature of MiniMax Agent, supporting multi-turn context understanding and knowledge-base-augmented responses.
+
+## Conversation Flow
+
+1. User sends a text message
+2. Agent retrieves relevant documents from the knowledge base
+3. Generates a response combining context history and retrieved results
+4. Response includes citations to knowledge base document sources
+
+## Supported Message Types
+
+- **Plain Text** — Standard text messages
+- **Rich Text** — Markdown-formatted responses
+- **Card Messages** — Structured information display (e.g., order details, product recommendations)
+
+## Context Management
+
+The Agent retains the most recent 20 conversation turns as context by default. Configurable via:
+
+- **max_turns**: Maximum retained turns (recommended 10–30)
+- **context_window**: Context window size
+
+## Knowledge Base Retrieval
+
+For each user query, the Agent:
+
+1. Performs semantic understanding of the question
+2. Retrieves the Top-K most relevant documents from Elasticsearch
+3. Generates an answer using the retrieved results as reference
+4. Cites the sources in the response

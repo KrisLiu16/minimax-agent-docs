@@ -1,0 +1,35 @@
+---
+title: "Network Issues"
+---
+
+## WebSocket Disconnection
+
+**Symptom**: Voice call or real-time chat suddenly disconnects
+
+**Troubleshooting**:
+1. Check if the client network is stable
+2. Confirm WebSocket ports are not blocked by firewalls
+3. Review server logs for timeout records
+4. Check load balancer idle timeout settings (recommended >= 300s)
+
+## API Request Timeout
+
+**Symptom**: Agent API returns 504 or request times out
+
+**Common causes**:
+- **Slow knowledge base retrieval** — ES cluster under heavy load; check cluster status
+- **Slow LLM response** — Model inference latency; check GPU resources
+- **Long network path** — High latency from cross-region calls; deploy closer to users
+
+**Recommended timeout settings**:
+- Client: 30s
+- Gateway: 60s
+- Server: 90s
+
+## CORS Issues
+
+**Symptom**: Frontend API calls fail with CORS errors
+
+**Solution**: CORS headers are set on all backend APIs. If issues persist, check:
+1. Whether requests pass through an additional proxy (Nginx, etc.) that may override CORS headers
+2. Whether custom request headers are used — they need to be added to `Access-Control-Allow-Headers`
