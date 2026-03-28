@@ -1,35 +1,39 @@
 ---
-title: "快速开始"
+title: "产品总览"
 ---
 
-## 欢迎使用 MiniMax Agent
+## MiniMax Agent 平台简介
 
-MiniMax Agent 是一款智能客服助手，支持文本对话和语音通话，帮助企业高效处理客户咨询。
+MiniMax Agent 是 MiniMax 推出的 AI 助手平台，入口为 [agent.minimaxi.com](https://agent.minimaxi.com)。平台旗下包含四个核心产品：
 
-## 接入流程
+| 产品 | 定位 | 说明 |
+|------|------|------|
+| **Agent 对话模式** | 智能 AI 对话 | 直接与 AI 进行多轮对话，支持知识库检索增强 |
+| **MaxClaw** | 云端 AI 助手 | 云端托管的 OpenClaw 实例，7×24 运行，开箱即用 |
+| **SkillHub** | 技能社区 | 上百种现成技能，一键装入 MaxClaw |
+| **Desktop** | 桌面端应用 | 在本地电脑部署 OpenClaw，自主掌控数据 |
 
-1. **创建客服配置** — 在 admin 后台「配置管理」tab 中创建一个客服配置
-2. **配置知识库** — 添加业务相关的知识文档，Agent 会基于这些文档回答问题
-3. **测试对话** — 在「会话管理」tab 中查看测试对话效果
-4. **上线部署** — 确认效果后接入线上环境
+## 快速开始
 
-## 核心概念
+### 使用 MaxClaw（推荐新用户）
 
-### 客服配置 (Config)
+1. 打开 [agent.minimaxi.com](https://agent.minimaxi.com)，注册/登录账号
+2. 进入 MaxClaw 页面，点击「创建」部署你的专属龙虾
+3. 直接发消息开始使用，无需配置 API Key 或服务器
 
-每个客服配置包含：
-- 基本信息（名称、描述）
-- 关联的知识库
-- 对话参数（温度、最大轮次等）
+### 使用 SkillHub 扩展技能
 
-### 知识库文档
+1. 打开 SkillHub 社区，浏览上百种技能
+2. 选中你想要的技能，点击「立即使用」
+3. 在 MaxClaw 对话中即可调用该技能
 
-知识库是 Agent 回答问题的依据。文档会被索引到 Elasticsearch 中，支持语义检索。
+## 账号与积分
 
-- 支持手动创建和编辑
-- 支持从 GitHub 仓库批量同步
-- 支持 AI 增强搜索元数据
+- 登录账号后，右上角可查看积分余额
+- 积分是 MaxClaw 的计费单位，按调用模型的 token 用量扣除
+- 会员方案：基础版 39元/月
 
-### 会话 (Session)
+## 联系支持
 
-每次用户与 Agent 的对话构成一个会话，包含完整的消息历史和引用的知识库文档。
+- 官方邮箱：MiniMaxAgent@minimax.io
+- 积分激励活动表单：https://vrfi1sk8a0.feishu.cn/share/base/form/shrcnIzj7eOF9Y3eL8zu8kAmBVe

@@ -2,40 +2,67 @@
 title: "Common Errors"
 ---
 
-## Sync Failures
+## Self-Check Order
 
-### git pull failed
+When something goes wrong, follow these steps in order:
 
-**Symptom**: Sync log shows `git pull failed, aborting sync`
+1. **Check credit balance** — depleted credits cause most errors
+2. **Click Restart** — top-right restart button
+3. **Send /new** — clear chat history and start a new conversation
+4. **Auto Repair** — top-right gear → Auto Repair
+5. **Delete and recreate** — if all else fails, delete MaxClaw and create a new one
+6. **Contact support** — provide chat_id and email MiniMaxAgent@minimax.io
 
-**Causes & Solutions**:
-- **Auth failure** — Verify the `GITHUB_TOKEN` environment variable is set correctly
-- **Network issue** — Confirm the server can reach github.com
-- **Merge conflict** — Never modify the local repo on the server directly; push all changes via git
+> chat_id: Copy the number at the end of the URL, e.g. `https://agent.minimaxi.com/chat?id=370943808623550` → `370943808623550`
 
-### RPC call failed
+---
 
-**Symptom**: Sync log shows `create failed` or `update failed` with RPC errors
+## Error Reference
 
-**Causes & Solutions**:
-- **chat-server unavailable** — Check if the chat-server service is running
-- **Invalid parameters** — Verify the config_id is valid
-- **Document too large** — Keep individual documents under 50KB
+### 400 / HTTP 500 / Internal Server Error
 
-## Knowledge Base Search Issues
+**Cause:** Credits exhausted (most common), or service error.
 
-### Document synced but not searchable
+**Fix:**
+1. Check credit balance
+2. Credits sufficient → click Restart
+3. Still failing → provide chat_id
 
-**Possible causes**:
-1. ES indexing delay — Wait a few seconds and retry
-2. Search keywords differ too much from document content — Use AI enhancement to optimize search metadata
-3. Category mismatch — Ensure the config_id used during search matches the one used during sync
+---
 
-### Document content is empty
+### 413 / Maximum Request Body Size Exceeded
 
-**Cause**: Incorrect MDX frontmatter format causing parse failure
+**Cause:** Conversation history too long (approx. >1MB). Common after image recognition.
 
-**Check**:
-- Frontmatter must start and end with `---`
-- The `title` field must exist and be non-empty
-- Ensure file encoding is UTF-8
+**Fix:** Send `/new` to clear history, then retry.
+
+---
+
+### Moderation Blocked / Input Box Disabled
+
+**Cause:** Content triggered the platform's content safety review.
+
+**Fix:** Delete MaxClaw and redeploy. If you believe it's a false positive, email MiniMaxAgent@minimax.io with your chat_id — credits will be refunded for confirmed false positives.
+
+---
+
+### Task Stopped / "Try a New Task"
+
+**Cause:** Safety review triggered.
+
+**Fix:** Delete and recreate MaxClaw.
+
+---
+
+### Stuck on Loading / No Response
+
+**Fix:**
+1. Click Restart (top-right)
+2. Click Auto Repair
+3. Still failing → provide chat_id
+
+---
+
+### Response Timeout
+
+**Fix:** Send `/new` to start a new conversation — usually recovers immediately.

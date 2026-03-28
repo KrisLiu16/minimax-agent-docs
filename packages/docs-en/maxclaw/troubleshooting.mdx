@@ -1,0 +1,64 @@
+---
+title: "MaxClaw — Troubleshooting"
+---
+
+> ⚠️ **Important:** For any technical issue, always provide your chat_id so support can investigate.
+> chat_id: Open a conversation and copy the number at the end of the URL.
+> Example: `https://agent.minimaxi.com/chat?id=370943808623550` → `370943808623550`
+
+## Stuck on Loading / No Response
+
+1. Click the **Restart** button (top-right corner), then send the message again
+2. If restart fails → click **Auto Repair**, then try again
+3. Still no response → provide chat_id and contact support
+
+## No Reply / Response Timeout
+
+1. Send `/new` to start a new conversation — usually recovers immediately
+2. If it keeps happening → click Restart
+
+## Error 400 / HTTP 500 / Internal Server Error
+
+**Most common cause: credits exhausted.**
+
+1. Check credit balance (top-right corner)
+2. Credits sufficient but still erroring → click Restart
+3. Still failing → provide chat_id
+
+## 413 / Maximum Request Body Size Exceeded
+
+Conversation history too long (approx. >1MB). Common after image recognition.
+
+**Fix:** Send `/new` to clear history, then retry.
+
+## Moderation Blocked / Input Box Disabled
+
+Content triggered the platform's safety review.
+
+**Fix:** Top-right gear → **Delete and recreate** MaxClaw.
+
+> If you believe this is a false positive, email MiniMaxAgent@minimax.io with your chat_id — credits will be refunded for confirmed false positives.
+
+## Task Stopped / "Try a New Task"
+
+Safety review was triggered.
+
+**Fix:** Delete and recreate MaxClaw.
+
+## Conversation Suddenly Terminated / Stuck
+
+Click Delete on the current MaxClaw instance, then create a new one.
+
+## Lark Pairing Keeps Failing / Always Restarting
+
+**Cause:** Unclear prompts caused MaxClaw to corrupt its own config file.
+
+1. Top-right gear → **Auto Repair**
+2. If that fails → delete and redeploy; avoid making frequent configuration changes
+
+## Negative Credits / Balance Insufficient
+
+1. Check credit balance in the web app
+2. Credits exhausted → recharge to continue
+3. Credits sufficient but still erroring → click Restart
+4. Still failing → provide chat_id and contact support

@@ -1,0 +1,54 @@
+---
+title: "MaxClaw — Credits, Billing & Refunds"
+---
+
+## How Credits Are Consumed
+
+MaxClaw bills based on **actual token usage**, the same logic as calling the MiniMax API directly.
+
+**Why credits run out fast:**
+- Every operation (installing skills, creating agent clusters, tool calls) involves the model
+- Longer conversation history = more tokens per request
+- Web search, image generation, and other tools bring in full context
+
+**Tips to save credits:**
+- Send `/new` after each task to clear conversation history (short-term memory)
+- Treat `/new` as a "task switch" — do it between each unrelated task
+- Avoid doing too many unrelated things in a single conversation
+
+## What Happens When Credits Run Out
+
+- All conversations and tool calls stop immediately
+- Scheduled tasks (Cron) and daily push notifications also stop
+- They resume automatically after you recharge
+
+## Subscription Plan
+
+| Plan | Price |
+|------|-------|
+| Basic | ¥39/month (every month, not just the first) |
+
+## Coding Plan / API Key Integration
+
+MaxClaw supports MiniMax Coding Plan or pay-as-you-go API Key to offset text model credit usage:
+
+1. Requires MiniMax Agent Basic subscription or above
+2. Tool calls (image/video generation, etc.) still deduct Agent credits
+3. Must be configured in the **web version**: https://agent.minimaxi.com/max-claw
+4. Coding Plan has a 5-hour window quota; upgrade or wait for refresh if exceeded
+5. Switching to Coding Plan is irreversible mid-session — to switch back, delete and redeploy MaxClaw
+
+> Note: MiniMax Agent credits and MiniMax Open Platform balance are **completely separate** — must be recharged independently.
+
+## Checking Credit Usage
+
+To query credit usage details, provide your chat_id and email MiniMaxAgent@minimax.io.
+
+chat_id: Open a conversation and copy the number at the end of the URL.
+Example: `https://agent.minimaxi.com/chat?id=370943808623550` → `370943808623550`
+
+## Refund Policy
+
+Refunds are processed through the official email channel:
+- Email **MiniMaxAgent@minimax.io** with your order info and reason for refund
+- The review team will reply via email — no refund promises made through other channels

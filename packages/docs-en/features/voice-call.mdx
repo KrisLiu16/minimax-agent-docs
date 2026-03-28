@@ -1,28 +1,43 @@
 ---
-title: "Voice Call"
+title: "Multi-Platform Access & IM Integration"
 ---
 
-## Overview
+## Supported Platforms
 
-MiniMax Agent supports real-time voice calls, allowing users to have natural conversations via voice.
+| Platform | Status | Notes |
+|----------|--------|-------|
+| Web (agent.minimaxi.com) | ✅ | Primary access point |
+| Mobile App (MiniMax official app) | ✅ | Synced with web |
+| Lark | ✅ | Group bot supported |
+| WeCom (Enterprise WeChat) | ✅ | Group bot supported |
+| Personal WeChat | ✅ | Fully rebuilt in 03.27 update |
+| PC Desktop client | ❌ | MaxClaw not supported — use web |
 
-## Supported Scenarios
+## Lark / WeCom Setup (5 Steps)
 
-- **Phone Support** — Users call the support hotline, handled by the Agent
-- **Voice Assistant** — In-app voice interaction integration
-- **Outbound Callbacks** — Agent proactively calls users for follow-ups
+1. Tell your lobster "I want to connect Lark" (or WeCom)
+2. Click the link the lobster provides and create a bot
+3. Send a message to the bot to get a pairing code
+4. Give the pairing code to your lobster
+5. Done!
 
-## Voice Parameters
+See the MaxClaw User Guide for detailed step-by-step screenshots.
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| Voice Model | TTS synthesis model | speech-02-hd |
-| Speed | Playback speed | 1.0 |
-| Voice | Preset or custom voice | Default female |
-| VAD Sensitivity | Voice activity detection sensitivity | Medium |
+## WeChat Setup
 
-## Best Practices
+- **New lobsters:** Type "connect WeChat" in the chat box → one-click setup
+- **Existing lobsters:** Automatic sandbox upgrade in progress — no rebuild needed
 
-1. **Keep responses concise** — Long replies are poor UX in voice; limit key points to 3 sentences or fewer
-2. **Avoid complex formatting** — Tables and code blocks can't be rendered in voice; use conversational language
-3. **Enable interruption** — Allow users to interrupt the Agent's response for better interaction
+## Adding a Bot to a Group Chat
+
+Group chat → Group Settings → Group Bots → Add → Find MaxClaw → Confirm
+
+## Multi-Lobster + IM Combination
+
+Deploy up to 3 lobsters, connect each to a different IM bot, add them all to the same group. Mention everyone to get all lobsters working in parallel.
+
+## Notes
+
+- Don't manually update MaxClaw — it can corrupt the container
+- IM connections may drop after a version update and need to be reconfigured
+- On connection failure, try Auto Repair first before deleting and rebuilding

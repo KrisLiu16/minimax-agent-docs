@@ -1,0 +1,36 @@
+---
+title: "Agent Chat Mode"
+---
+
+## What is Agent Chat Mode?
+
+Agent Chat is the core AI conversation feature on the MiniMax Agent platform. It supports multi-turn contextual dialogue and can be enhanced with knowledge base retrieval for more accurate answers.
+
+Access at: [agent.minimaxi.com](https://agent.minimaxi.com)
+
+## Core Capabilities
+
+- **Multi-turn context** — AI remembers conversation history for follow-up questions
+- **Knowledge base retrieval (RAG)** — Answers grounded in structured documents
+- **Tool use** — Web search, image generation, file operations, code execution
+- **Multimodal input** — Supports text and image input
+
+## Agent Chat vs MaxClaw
+
+| | Agent Chat | MaxClaw |
+|--|--|--|
+| Purpose | Instant AI conversation | Long-running personal AI assistant |
+| Long-term memory | None (resets after session) | ✅ Persistent (MEMORY.md) |
+| Scheduled tasks | None | ✅ Cron jobs supported |
+| IM integration | None | ✅ Lark / WeCom / WeChat |
+| Billing | Token-based credits | Token-based credits |
+
+## Usage Recommendation
+
+- Quick Q&A or one-off tasks → **Agent Chat**
+- Long-term memory, automation, or IM integration → **MaxClaw**
+
+## Context & Cost
+
+- Each message carries the full conversation history — longer context means more credits consumed
+- Use `/new` to clear the current session history and reduce token cost

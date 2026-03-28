@@ -1,0 +1,49 @@
+---
+title: "MaxClaw — Product Overview"
+---
+
+## What is MaxClaw?
+
+MaxClaw is a **cloud-hosted AI assistant** built on OpenClaw, running a dedicated instance for each user in the cloud. It connects to MiniMax's own models — no server or API Key required, ready to use out of the box.
+
+> Nickname: Lobster 🦞
+
+## Core Capabilities
+
+- **7×24 cloud uptime** — Always on, no local device required
+- **Long-term memory** — Remembers preferences, habits, and history (MEMORY.md)
+- **Built-in tools** — Web search, image/video generation, file operations, code execution
+- **Scheduled tasks (Cron)** — Automate daily news, timed reminders, etc.
+- **Multi-platform access** — Web + mobile app + Lark / DingTalk / WeCom / WeChat
+
+## Supported Platforms
+
+| Platform | Status |
+|----------|--------|
+| Web (agent.minimaxi.com) | ✅ Supported |
+| Mobile App (MiniMax official app) | ✅ Supported — synced with web |
+| Lark / WeCom / WeChat | ✅ Supported via connection |
+| PC Desktop client | ❌ MaxClaw not supported — use the web instead |
+
+## Multiple MaxClaw Instances
+
+One account can run up to **3 lobsters simultaneously**, each with its own name, personality (SOUL.md), and specialty, connected to different IM bots.
+
+Example setup:
+
+| Name | Role |
+|------|------|
+| Assistant | Scheduling, emails, reminders |
+| Dev | Code review, technical research |
+| Analyst | Data analysis, dashboards |
+
+## File Storage
+
+- `memory/` — Internal workspace, not shown in the file list
+- `WorkSpace/` — User-visible file area
+
+If you can't find a generated file, tell the Agent: "Move the file to the WorkSpace directory."
+
+## MaxClaw vs OpenClaw
+
+MaxClaw = cloud-hosted OpenClaw. For local self-deployment, install OpenClaw from openclaw.ai.

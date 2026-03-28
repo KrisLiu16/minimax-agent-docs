@@ -1,0 +1,56 @@
+---
+title: "MaxClaw — Features & Usage"
+---
+
+## /new Command
+
+`/new` starts a new conversation and clears **short-term memory** (current chat history). Long-term memory is NOT affected.
+
+- **Cleared:** Current conversation message history
+- **Preserved:** MEMORY.md, installed skills, configurations, scheduled tasks
+
+**Recommended usage:** Send `/new` after every task before starting the next one — significantly reduces token consumption.
+
+## Scheduled Tasks (Cron)
+
+MaxClaw can automatically run tasks on a schedule, such as daily news digests or timed reminders.
+
+- Scheduled tasks stop when credits run out and resume after recharge
+- If a scheduled task disappears, reconfigure it in the web conversation
+
+## IM Platform Integration
+
+### Supported Platforms
+Lark / WeCom / WeChat (personal) / DingTalk
+
+### Lark / WeCom Setup (5 steps)
+1. Tell your lobster: "I want to connect Lark"
+2. Click the link the lobster provides and create a bot
+3. Send a message to the bot to get a pairing code
+4. Give the pairing code to your lobster
+5. Done!
+
+### Adding the Bot to a Group
+Group Settings → Group Bots → Add → Find MaxClaw → Confirm
+
+### Notes
+- Connection failures: try Auto Repair first (top-right gear icon); if that fails, delete and redeploy
+- Avoid frequently modifying configurations — it can corrupt config files
+
+## WeChat Integration (Updated 03.27)
+
+WeChat connection has been fully rebuilt and re-adapted:
+- **New lobsters:** Type "connect WeChat" in the chat box — one-click setup
+- **Existing lobsters:** Automatic sandbox upgrade, no rebuild needed
+
+## Version Updates
+
+MaxClaw updates are pushed automatically by the team. **Do not manually update** — it can corrupt the container and waste credits.
+
+## Office Skills (Released 03.25)
+
+MiniMax Office Skills is fully open-source (MIT license), covering:
+- **Word** — Lossless editing, zero format degradation
+- **Excel** — Native formula preservation, pivot table support
+- **PPT** — Professional-grade layout and design
+- **PDF** — End-to-end delivery with a single sentence
